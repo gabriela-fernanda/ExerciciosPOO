@@ -1,22 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SistemaAnimais
 {
-    public class Animal
+    public abstract class Animal
     {
         private string Nome;
         private int Idade;
 
+        public Animal(string nome, int idade)
+        {
+            this.Nome = nome;
+            this.Idade = idade;
+        }
         public string GetNome()
         {
             return this.Nome;
         }
 
-        public int GetIdade() 
+        public int GetIdade()
         {
             return this.Idade;
         }
@@ -31,16 +37,18 @@ namespace SistemaAnimais
             this.Idade = idade;
         }
 
-        public virtual void EmitirSom()
-        {
+        //Podia fazer asaim ao ives de usar os métodos Set
+        //public Animal(string nome, int idade)
+        //{
+        //    this.Nome = nome;
+        //    this.Idade = idade;
+        //}
 
-        }
+        public abstract string EmitirSom();
 
-        public virtual void Exibir()
+        public override string ToString()
         {
-            Console.WriteLine("Nome: " + this.Nome);
-            Console.WriteLine("Idade: " + this.Idade);
-            EmitirSom();
+            return $"Nome: {this.Nome}\nIdade: {this.Idade}";
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,14 +9,12 @@ namespace SistemaAnimais
 {
     public class Gato : Animal
     {
-        public override void EmitirSom()
+        public Gato(string nome, int idade) : base(nome, idade)
         {
-            Console.WriteLine("Miau Miau");
         }
-
-        public override void Exibir()
+        public override string EmitirSom()
         {
-            base.Exibir();
+            return "Miau Miau";
         }
     }
 }

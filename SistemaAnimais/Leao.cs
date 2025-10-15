@@ -8,14 +8,13 @@ namespace SistemaAnimais
 {
     public class Leao : Animal
     {
-        public override void EmitirSom()
+        public override string EmitirSom()
         {
-            Console.WriteLine("Roarrrrr");
+            return "Roarrrrr";
         }
 
-        public override void Exibir()
+        public Leao(string nome, int idade) : base(nome, idade)
         {
-            base.Exibir();
         }
     }
 }

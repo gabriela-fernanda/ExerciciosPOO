@@ -8,14 +8,13 @@ namespace SistemaAnimais
 {
     public class Cachorro : Animal
     {
-        public override void EmitirSom()
+        public override string EmitirSom()
         {
-            Console.WriteLine("Au Au");
+            return "Au Au";
         }
 
-        public override void Exibir()
+        public Cachorro(string nome, int idade) : base(nome, idade)
         {
-            base.Exibir();
         }
     }
 }
