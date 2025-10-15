@@ -8,29 +8,14 @@ namespace SistemaPagamento
 {
     public class PagamentoCartaoCredito : Pagamento
     {
-        public string NumeroCartao;
+       
+        public override void ProcessarPagamento(DateTime data, decimal valor)
+        {
+            this.setValor(valor);
+            this.setDataPagamento(data);
 
-        public void SetNumeroCartao(string numeroCartao)
-        {
-            this.NumeroCartao = numeroCartao;
-        }
-
-        public string GetNumeroCartao()
-        {
-            return this.NumeroCartao;
-        }
-
-        public PagamentoCartaoCredito(string numeroCartao, double valor, DateTime dataPagamento)
-        {
-            this.NumeroCartao = numeroCartao;
-            this.Valor = valor;
-            this.DataPagemnto = dataPagamento;
-        }
-        public override void ProcessarPagamento()
-        {
-            Console.WriteLine("Numero do cartao: " + this.NumeroCartao);
-            Console.WriteLine("Valor do pagamento: " + this.Valor);
-            Console.WriteLine("Data do pagamento: " + this.DataPagemnto);
+            Console.WriteLine("Pagamento efetuado com cartão de credito");
+            Console.WriteLine(data);
         }
     }
 }

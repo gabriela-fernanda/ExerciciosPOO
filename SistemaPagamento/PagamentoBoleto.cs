@@ -1,36 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SistemaPagamento
 {
     public class PagamentoBoleto : Pagamento
     {
-        public string CodigoBarras;
+        public override void ProcessarPagamento(DateTime data, decimal valor)
+        {
+            this.setValor(valor);
+            this.setDataPagamento(data);
 
-        public void SetNumeroCartao(string codigoBarras)
-        {
-            this.CodigoBarras = codigoBarras;
-        }
-
-        public string GetNumeroCartao()
-        {
-            return this.CodigoBarras;
-        }
-
-        public PagamentoBoleto(string codigoBarras, double valor, DateTime dataPagamento)
-        {
-            this.CodigoBarras = codigoBarras;
-            this.Valor = valor;
-            this.DataPagemnto = dataPagamento;
-        }
-        public override void ProcessarPagamento()
-        {
-            Console.WriteLine("Codigo de Barras: " + this.CodigoBarras);
-            Console.WriteLine("Valor do pagamento: " + this.Valor);
-            Console.WriteLine("Data do pagamento: " + this.DataPagemnto);
+            Console.WriteLine("Pagamento efetuado com boleto");
+            Console.WriteLine(data);
         }
     }
 }

@@ -8,29 +8,19 @@ namespace SistemaPagamento
 {
     public abstract class Pagamento
     {
-        public double Valor;
+        public decimal Valor;
         public DateTime DataPagemnto;
 
-        public abstract void ProcessarPagamento();
+        public abstract void ProcessarPagamento(DateTime data, decimal valor);
 
-        public double GetValor()
+        public void setValor(decimal valor)
         {
-            return this.Valor;
+            Valor = valor;
         }
 
-        public DateTime GetDataPagamento()
+        public void setDataPagamento(DateTime dataPagamento)
         {
-            return this.DataPagemnto;
-        }
-
-        public void SetValor(double valor)
-        {
-            this.Valor = valor;
-        }
-
-        public void SetDataPagamento(DateTime dataPagamento)
-        {
-            this.DataPagemnto = dataPagamento;
+            DataPagemnto = dataPagamento;
         }
     }
 }
