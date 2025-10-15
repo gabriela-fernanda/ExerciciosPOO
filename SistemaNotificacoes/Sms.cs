@@ -8,9 +8,10 @@ namespace SistemaNotificacoes
 {
     public class Sms : Notificacao
     {
-        public override void Enviar()
+        public override void Enviar(string mensagem)
         {
-            Console.WriteLine("Enviando notificação por SMS...");
+            base.Enviar(mensagem);
+            Console.WriteLine("SMS enviado!");
         }
     }
 }

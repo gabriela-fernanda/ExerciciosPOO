@@ -1,13 +1,13 @@
 ﻿using SistemaNotificacoes;
 
-Console.WriteLine("Sistema de notificação: "); // arrumar depois
-Notificacao notificacao1 = new Email();
-notificacao1.Enviar();
+Notificacao[] notificacoes = new Notificacao[3];
 
-Notificacao notificacao2 = new Sms();
-notificacao2.Enviar();
+notificacoes[0] = new Email();
+notificacoes[1] = new Sms();
+notificacoes[2] = new PushNotification();
 
-Notificacao notificacao3 = new PushNotification();
-notificacao3.Enviar();
-
+foreach (var notificacao in notificacoes)
+{
+    notificacao.Enviar("Olá! Esta é uma notificação importante.");
+}
 

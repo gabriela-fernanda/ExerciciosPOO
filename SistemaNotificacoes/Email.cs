@@ -8,9 +8,10 @@ namespace SistemaNotificacoes
 {
     public class Email : Notificacao
     {
-        public override void Enviar()
+        public override void Enviar(string mensagem)
         {
-            Console.WriteLine("Enviando notificação por Email...");
+           base.Enviar(mensagem);
+            Console.WriteLine("Email enviado!");
         }
     }
 }

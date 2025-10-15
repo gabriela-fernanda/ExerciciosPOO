@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SistemaNotificacoes
 {
-    public class Notificacao
+    public abstract class Notificacao
     {
-        public virtual void Enviar()
+        public virtual void Enviar(string mensagem)
         {
-            Console.WriteLine("Enviando notificação genérica...");
+            Console.WriteLine($"Enviando notificação: {mensagem}");
         }
     }
 }

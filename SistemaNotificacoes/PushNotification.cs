@@ -8,9 +8,10 @@ namespace SistemaNotificacoes
 {
     public class PushNotification : Notificacao
     {
-        public override void Enviar()
+        public override void Enviar(string mensagem)
         {
-            Console.WriteLine("Enviando notificação push...");
+            base.Enviar(mensagem);
+            Console.WriteLine("Push Notification enviada!");
         }
     }
 }
